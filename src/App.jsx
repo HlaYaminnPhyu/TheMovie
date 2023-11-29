@@ -1,16 +1,26 @@
-import React, { useState } from 'react'
-import Movies from './pages/Movies'
+import React from 'react'
+
 import Navbar from './components/Navbar'
+
+
+import Path from './routes/Path'
 import Carousel from './components/Carousel'
+import Trending from './pages/Movies'
+import { MantineProvider } from '@mantine/core';
+import '@mantine/core/styles.css';
 
 const App = () => {
   
   return (
-    <div className=' bg-[#110e1b] text-white'>
-      <Navbar/>
-      {/* <Carousel/> */}
-      <Movies/>
-    </div>
+    <MantineProvider>
+      <div className=' bg-white h-fit'>
+
+{/* <Path/> */}
+<Trending/>
+
+</div>
+    </MantineProvider>
+    
   )
 }
 
