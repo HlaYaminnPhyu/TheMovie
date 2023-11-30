@@ -6,10 +6,11 @@ import Card from '../components/Card';
 import { FaSearch } from 'react-icons/fa';
 import Filter from '../components/Filter';
 
+
 	
 
 
-const Trending = () => {
+const Movies = () => {
 	
 	const [movieData,setMovieData]=useState([]);
 	const [filtered,setFiltered]=useState([]);
@@ -40,6 +41,7 @@ const Trending = () => {
 
   return (
 	<div className="bg-black text-white relative">
+   
 		<nav className=" bg-[#7c162e] shadow-xl text-white fixed top-0 left-0 right-0 z-10 my-44">
       <div className=" flex items-center justify-between container mx-auto px-5 py-2 rounded">
         <div className=" flex items-center gap-7">
@@ -58,7 +60,8 @@ const Trending = () => {
         <div className="">
           <ul className=" flex gap-6">
             <li className=" text-lg">
-            <a href="">TV Show</a>
+            <a href="">Movies
+            </a>
             </li>
             <li className="text-lg">
               <a href="">TV Show</a>
@@ -98,4 +101,4 @@ const Trending = () => {
   )
 }
 
-export default Trending
+export default Movies
