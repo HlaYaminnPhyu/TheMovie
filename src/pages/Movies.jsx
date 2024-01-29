@@ -40,9 +40,9 @@ const Movies = () => {
 // console.log(inputValue);
 
   return (
-	<div className="bg-black text-white relative">
+	<div className="bg-[#121212] text-white relative">
    
-		<nav className=" bg-[#7c162e] shadow-xl text-white fixed top-0 left-0 right-0 z-10 my-44">
+		{/* <nav className=" bg-[#f1603c] shadow-xl text-white fixed top-0 left-0 right-0 z-10">
       <div className=" flex items-center justify-between container mx-auto px-5 py-2 rounded">
         <div className=" flex items-center gap-7">
         
@@ -85,7 +85,7 @@ const Movies = () => {
         </div>
       </div>
    
-    </nav>
+    </nav> */}
 	<Filter popular={movieData} filtered={filtered} activeGenre={activeGenre} setActiveGenre={setActiveGenre} setFiltered={setFiltered}/>
 	<div className=' flex flex-wrap gap-7 justify-center min-h-screen'>
 		{filtered?.map(movie=>{

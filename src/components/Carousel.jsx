@@ -30,77 +30,20 @@ const Carousel = ({originals}) => {
                         {originals?.original_name}
                     </div>
                     <div className="featured--info">
-                        <div className="featured--points">{originals?.vote_average} pontos</div>
+                        <div className="featured--points">{originals?.vote_average} points</div>
                         {/* <div className="featured--year">{originals?.getFullYear()}</div> */}
-                        <div className="featured--seasons">{originals?.number_of_seasons} temporada{originals?.number_of_seasons !== 1 ? 's' : ''}</div>
+                        <div className="featured--seasons">{originals?.number_of_seasons} season{originals?.number_of_seasons !== 1 ? 's' : ''}</div>
                     </div>
                     <div className="featured--description">{originals?.overview}</div>
                     <div className="featured--buttons">
-                        <a href='/watch/${item.id}' className="featured--watchbutton"><FaPlay size={13} /> Assistir</a>
-                        <a href='/list/add/${item.id}' className="featured--mylistbutton"><FaPlus size={13} /> Minha lista</a>
+                        <a href='/watch/${item.id}' className="featured--watchbutton"><FaPlay size={13} /> Watch</a>
+                        <a href='/list/add/${item.id}' className="featured--mylistbutton"><FaPlus size={13} /> Add</a>
                     </div>
-                    <div className="featured--genres"><strong>Gêneros:</strong> {genres?.join(', ')}</div>
+                    <div className="featured--genres"><strong>Genres:</strong> {genres?.join(', ')}</div>
                 </div>
             </div>
         </section>
-		{/* <div className=" flex">
-    <div className=" flex-initial w-[75%]">
 
-<Swiper
-      className=""
-      modules={[Autoplay]}
-    //   autoplay={{ delay: 1000 }}
-    >
-      <SwiperSlide>
-        <div className=" p-5 h-fit">
-          <img
-            className=" w-full"
-            src="https://image.tmdb.org/t/p/w500/9PqD3wSIjntyJDBzMNuxuKHwpUD.jpg
-    "
-            
-          />
-
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-  <div className=" p-5 h-full">
-          <img
-            className=" w-full"
-            src="https://image.tmdb.org/t/p/w500/9PqD3wSIjntyJDBzMNuxuKHwpUD.jpg
-    "
-            
-          />
-
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-  <div className=" p-5 h-full">
-          <img
-            className=" w-full"
-            src="https://image.tmdb.org/t/p/w500/9PqD3wSIjntyJDBzMNuxuKHwpUD.jpg
-    "
-            
-          />
-
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-  <div className=" p-5 h-full">
-          <img
-            className=" w-full"
-            src="https://image.tmdb.org/t/p/w500/9PqD3wSIjntyJDBzMNuxuKHwpUD.jpg
-    "
-            
-          />
-
-        </div>
-      </SwiperSlide>
-    </Swiper>
-</div>
-<div className=" flex-initial w-[25%]">
-  <Sidebar/>
-</div>
-    </div> */}
 		
 	</div>
   )
