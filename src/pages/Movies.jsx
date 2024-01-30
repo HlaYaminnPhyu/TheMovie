@@ -7,6 +7,7 @@ import { FaSearch } from 'react-icons/fa';
 import Filter from '../components/Filter';
 
 
+
 	
 
 
@@ -40,9 +41,9 @@ const Movies = () => {
 // console.log(inputValue);
 
   return (
-	<div className="bg-[#121212] text-white relative">
+	<div className="bg-[#000] text-white relative">
    
-		{/* <nav className=" bg-[#f1603c] shadow-xl text-white fixed top-0 left-0 right-0 z-10">
+		{/* <nav className=" bg-[#fdae16] shadow-xl text-white fixed top-0 left-0 right-0 z-10">
       <div className=" flex items-center justify-between container mx-auto px-5 py-2 rounded">
         <div className=" flex items-center gap-7">
         
@@ -87,11 +88,12 @@ const Movies = () => {
    
     </nav> */}
 	<Filter popular={movieData} filtered={filtered} activeGenre={activeGenre} setActiveGenre={setActiveGenre} setFiltered={setFiltered}/>
-	<div className=' flex flex-wrap gap-7 justify-center min-h-screen'>
+	<div className=' flex flex-wrap justify-center items-center gap-3 min-h-screen'>
 		{filtered?.map(movie=>{
 			return(
-				<div  key={movie.id} className=''>
+				<div  key={movie.id} className=' w-[240px] h-[500px] rounded-lg'>
 					<Card movie={movie}/>
+          
 				</div>
 				)
 			})}

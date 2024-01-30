@@ -1,0 +1,48 @@
+.card {
+	/* background-color: theme('colors.white');
+	border-radius: theme('borderRadius.sm'); */
+	/* padding: theme('spacing.4'); */
+	/* box-shadow: theme('boxShadow.lg'); */
+  }
+  .image {
+	opacity: 1;
+	display: block;
+	width: 100%;
+	height: auto;
+	transition: .5s ease;
+	backface-visibility: hidden;
+	/* color:hsla(0,0%,100%,.75); */
+  }
+  .card .image{
+	transition: all .3s;
+	/* transition-timing-function: ease-in-out; */
+	transition-timing-function: ease;
+
+  }
+  .middle {
+	transition: .5s ease;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	text-align: center;
+  }
+  .card:hover .image {
+	opacity: 0.4;
+  }
+  
+  .card:hover .middle {
+	opacity: 1;
+  }
+  
+.card:hover img{
+		transform: scale(1.1);
+}
+.text {
+	background-color: #04AA6D;
+	color: white;
+	font-size: 16px;
+	padding: 16px 32px;
+  }
