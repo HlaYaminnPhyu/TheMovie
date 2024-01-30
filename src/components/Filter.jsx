@@ -13,9 +13,9 @@ const Filter = ({popular, setActiveGenre, filtered, activeGenre, setFiltered}) =
 	
   return (
 	<div className=' my-5 ml-20 flex gap-3'>
-		<button onClick={()=>setActiveGenre(0)} className=' bg-[#5c162e] text-white rounded px-6 py-1'>All</button>
-		<button onClick={()=>setActiveGenre(28)} className=' bg-[#5c162e] text-white rounded px-6 py-1'>Actions</button>
-		<button onClick={()=>setActiveGenre(80)} className=' bg-[#5c162e] text-white rounded px-6 py-1'>Comedy</button>
+		<button onClick={()=>setActiveGenre(0)} className=' bg-[#f1603c] text-white rounded px-6 py-1'>All</button>
+		<button onClick={()=>setActiveGenre(28)} className=' bg-[#f1603c] text-white rounded px-6 py-1'>Actions</button>
+		<button onClick={()=>setActiveGenre(80)} className=' bg-[#f1603c] text-white rounded px-6 py-1'>Comedy</button>
 
 	</div>
   )

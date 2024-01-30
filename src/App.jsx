@@ -12,6 +12,13 @@ import Carousel from "./components/Carousel";
 import "./App.css"
 // [#344c36] [#faad1b] #dbd2c1 #f6f1e3 #040707 #f1603c #fdae16 #f6efe1  #fdae16 #000000
 // https://preview.themeforest.net/item/unded-creative-agency-and-portfolio-react-template/full_screen_preview/49841815?_ga=2.126775822.2070452220.1706285728
+
+// https://api.themoviedb.org/3/discover/tv?api_key=9e42c112beec9727fcc0524687a55da2
+// https://api.themoviedb.org/3/movie/changes?api_key=9e42c112beec9727fcc0524687a55da2
+// https://api.themoviedb.org/3/movie/43901?api_key=9e42c112beec9727fcc0524687a55da2
+// https://api.themoviedb.org/3/movie/10751/videos?api_key=9e42c112beec9727fcc0524687a55da2
+// https://api.themoviedb.org/3/movie/10751/similar?api_key=9e42c112beec9727fcc0524687a55da2
+
 const App = () => {
 
   const [movieList, setMovieList] = useState([]);
@@ -29,6 +36,8 @@ const App = () => {
       );
       let chosen = originals[0].items.results[randomChosen];
       let chosenInfo = await api.getMovieInfo(chosen.id, "tv");
+   
+
       setFeaturedData(chosenInfo);
 
       console.log(chosenInfo);

@@ -7,10 +7,6 @@ import { FaSearch } from 'react-icons/fa';
 import Filter from '../components/Filter';
 
 
-
-	
-
-
 const Movies = () => {
 	
 	const [movieData,setMovieData]=useState([]);
@@ -35,6 +31,8 @@ const Movies = () => {
 		setMovieData(results);
 		setFiltered(results);
 	}
+	// let Detail=`https://api.themoviedb.org/3/movie/926599`;
+  https://api.themoviedb.org/3/discover/movie?api_key=9e42c112beec9727fcc0524687a55da2
 
 
 // console.log(movieData);
