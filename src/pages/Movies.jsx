@@ -39,9 +39,9 @@ const Movies = () => {
 // console.log(inputValue);
 
   return (
-	<div className="bg-[#000] text-white relative">
+	<div className="min-h-full text-white">
    
-		{/* <nav className=" bg-[#fdae16] shadow-xl text-white fixed top-0 left-0 right-0 z-10">
+		<nav className=" w-full px-1 py-2 lg:p-4 lg:pt-5 md:mx-auto flex flex-col lg:flex-row lg:items-center lg:mx-auto lg:justify-between font-bold fixed bg-black z-20">
       <div className=" flex items-center justify-between container mx-auto px-5 py-2 rounded">
         <div className=" flex items-center gap-7">
         
@@ -84,7 +84,7 @@ const Movies = () => {
         </div>
       </div>
    
-    </nav> */}
+    </nav>
 	<Filter popular={movieData} filtered={filtered} activeGenre={activeGenre} setActiveGenre={setActiveGenre} setFiltered={setFiltered}/>
 	<div className=' flex flex-wrap justify-center items-center gap-3 min-h-screen'>
 		{filtered?.map(movie=>{

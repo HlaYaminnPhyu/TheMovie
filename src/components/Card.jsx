@@ -39,6 +39,9 @@ const Card = ({movie}) => {
             {/* <IoPlayCircleOutline className=' text-6xl font-extralight'/> */}
             <a href="https://api.themoviedb.org/3/movie/10751/videos?api_key=9e42c112beec9727fcc0524687a55da2"><IoPlayCircleOutline className=' text-6xl font-extralight'/></a>
   </div>
+  <div className=" b absolute">
+              <button className=' w-full py-2 px-10 bg-slate-500 text-black'>Detail</button>
+            </div>
               </div>
             
             </div>
@@ -48,15 +51,15 @@ const Card = ({movie}) => {
               <p className=' text-lg font-bold break-words mt-4'>{movie.original_title.substring(0,25)}</p>
               <div className="flex justify-between items-center">
               <div className=" flex flex-col justify-start items-center mt-2">
-              <p className=' text-sm text-gray-400'>Release Date</p>
-              <p className=' text-sm text-gray-400 '>{movie.release_date}</p>
+              <p className=' text-sm text-[hsla(0,0%,100%,.75)]'>Release Date</p>
+              <p className=' text-sm text-[hsla(0,0%,100%,.75)]'>{movie.release_date}</p>
               </div>
               <div className="flex flex-row-reverse gap-2 my-4">
              <i><FaStar className=' text-xl text-yellow-500'/></i>
              <p>{Number((movie.vote_average).toFixed(2))}</p>
              </div>
               </div>
-              {/* <button className=' bg-[#fdae16] w-[100%] text-[#282828] py-2 mb-1'>Detail</button> */}
+              
               
             </div> 
             
