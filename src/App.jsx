@@ -37,7 +37,9 @@ const App = () => {
 		Movie();
 	},[inputValue]);
 	const shown=inputValue?'search':'discover';
-	let Api=`https://api.themoviedb.org/3/${shown}/movie`;
+	let Api=`https://api.themoviedb.org/3/search/movie`;
+	// let Api=`https://api.themoviedb.org/3/${shown}/movie`;
+
 	const Movie=async()=>{
 		const data=await axios.get(Api,{
 			params:{
@@ -142,7 +144,7 @@ const App = () => {
         <Carousel originals={featuredData}/>
        
         <div className='page'>
-      <Header black={blackHeader} />
+      {/* <Header black={blackHeader} /> */}
       {/* {featuredData &&
         <FeaturedMovie item={featuredData} />} */}
       <section className='lists'>

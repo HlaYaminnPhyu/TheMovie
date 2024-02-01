@@ -14,9 +14,13 @@ const MovieRow = ({ title, items }) => {
     }
     const handleRightArrow = () => {
         let x = scrollX - Math.round(window.innerWidth / 2);
-        let listW = items.results.length * 150;
+        // let listW = items.results.length * 150;
+        let listW = items.results.length * 200;
+
         if ((window.innerWidth - listW) > x) {
+            // x = (window.innerWidth - listW) - 60;
             x = (window.innerWidth - listW) - 60;
+
         }
         setScrollX(x);
     }
@@ -32,7 +36,9 @@ const MovieRow = ({ title, items }) => {
 	<div className="movieRow--listarea">
 		<div className="movieRow--list" style={{
 			marginLeft: scrollX,
-			width: items.results.length * 150
+			// width: items.results.length * 150
+			width: items.results.length * 300
+
 			}}>
 			{items.results.length > 0 && items.results.map((item, key) => (
 			   <div key={key} className="movieRow--item">

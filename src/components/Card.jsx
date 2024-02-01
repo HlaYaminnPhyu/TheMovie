@@ -31,10 +31,10 @@ const Card = ({movie}) => {
   return (
 
 	
-		<div className=" card w-full my-2 relative bg-[#000]">
+		<div className=" card w-full h-full my-2 relative bg-[#000]">
             <div className=" overflow-hidden">
               <div className=" relative">
-              <img className=' image object-fill w-full h-full' src={`${movie.poster_path? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`: NoImg} `} alt="" />
+              <img className=' image object-fill w-full h-[350px]' src={`${movie.poster_path? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`: NoImg} `} alt="" />
             <div className="middle">
             {/* <IoPlayCircleOutline className=' text-6xl font-extralight'/> */}
             <a href="https://api.themoviedb.org/3/movie/10751/videos?api_key=9e42c112beec9727fcc0524687a55da2"><IoPlayCircleOutline className=' text-6xl font-extralight'/></a>
