@@ -33,11 +33,13 @@ const App = () => {
 	const [filtered,setFiltered]=useState([]);
 	const [activeGenre,setActiveGenre]=useState(0);
 	const [inputValue,setInputValue]=useState('');
+  const [video,setVideo]=useState([]);
   useEffect(()=>{
 		Movie();
+    getVideos();
 	},[inputValue]);
 	const shown=inputValue?'search':'discover';
-	let Api=`https://api.themoviedb.org/3/search/movie`;
+	let Api=`https://api.themoviedb.org/3/discover/movie`;
 	// let Api=`https://api.themoviedb.org/3/${shown}/movie`;
 
 	const Movie=async()=>{
@@ -51,7 +53,16 @@ const App = () => {
 		setMovieData(results);
 		setFiltered(results);
 	}
-
+const getVideos=async()=>{
+  try{
+    await fetch("https://api.themoviedb.org/3/movie/10751/videos?api_key=9e42c112beec9727fcc0524687a55da2")
+    .then(res=>res.json())
+    .then(json=>setVideo(json.results))
+  }catch(err){
+    console.error(err);
+  }
+  
+}
 
 
   const [movieList, setMovieList] = useState([]);
@@ -165,7 +176,7 @@ const App = () => {
 		{filtered?.map(movie=>{
 			return(
 				<div  key={movie.id} className=' w-[240px] h-[500px] rounded-lg'>
-					<Card movie={movie}/>
+					<Card movie={movie} videos={video}/>
           
 				</div>
 				)

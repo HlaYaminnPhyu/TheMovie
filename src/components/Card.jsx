@@ -2,6 +2,7 @@ import React from 'react'
 import { FaStar } from "react-icons/fa";
 import NoImg from "../img/download.jpg"
 import {IoPlayCircleOutline} from "react-icons/io5"
+import YouTube from 'react-youtube';
 /* #110e1b */
 /* #7c162e */
 /* #5c162e */
@@ -16,8 +17,9 @@ import {IoPlayCircleOutline} from "react-icons/io5"
 // #606c38
 // #
 
-const Card = ({movie}) => {
-
+const Card = ({movie,videos}) => {
+  
+console.log(videos);
   // var containsJapanese = string.match(/[\u3400-\u9FBF]/);
 
 
@@ -32,12 +34,16 @@ const Card = ({movie}) => {
 
 	
 		<div className=" card w-full h-full my-2 relative bg-[#000]">
+     
             <div className=" overflow-hidden">
               <div className=" relative">
               <img className=' image object-fill w-full h-[350px]' src={`${movie.poster_path? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`: NoImg} `} alt="" />
             <div className="middle">
             {/* <IoPlayCircleOutline className=' text-6xl font-extralight'/> */}
-            <a href="https://api.themoviedb.org/3/movie/10751/videos?api_key=9e42c112beec9727fcc0524687a55da2"><IoPlayCircleOutline className=' text-6xl font-extralight'/></a>
+            <a href=""><IoPlayCircleOutline className=' text-6xl font-extralight'/></a>
+            <YouTube videoId={videos[0]?.key} className=' text-6xl font-extralight'/>
+            
+
   </div>
   <div className=" b absolute">
               <button className=' w-full py-2 px-10 bg-slate-500 text-black'>Detail</button>
@@ -63,7 +69,7 @@ const Card = ({movie}) => {
               
             </div> 
             
-          
+            
 	</div>
   )
 }
