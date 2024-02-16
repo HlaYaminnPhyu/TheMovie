@@ -41,7 +41,7 @@ console.log(videos);
             <div className="middle">
             {/* <IoPlayCircleOutline className=' text-6xl font-extralight'/> */}
             <a href=""><IoPlayCircleOutline className=' text-6xl font-extralight'/></a>
-            <YouTube videoId={videos[0]?.key} className=' text-6xl font-extralight'/>
+            {/* <YouTube videoId={videos[0]?.key} className=' text-6xl font-extralight'/> */}
             
 
   </div>
