@@ -3,6 +3,7 @@ import { FaStar } from "react-icons/fa";
 import NoImg from "../img/download.jpg"
 import {IoPlayCircleOutline} from "react-icons/io5"
 import YouTube from 'react-youtube';
+import { Link } from 'react-router-dom';
 /* #110e1b */
 /* #7c162e */
 /* #5c162e */
@@ -19,7 +20,8 @@ import YouTube from 'react-youtube';
 
 const Card = ({movie,videos}) => {
   
-console.log(videos);
+  // console.log(movie.id);
+// console.log(videos);
   // var containsJapanese = string.match(/[\u3400-\u9FBF]/);
 
 
@@ -40,7 +42,10 @@ console.log(videos);
               <img className=' image object-fill w-full h-[350px]' src={`${movie.poster_path? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`: NoImg} `} alt="" />
             <div className="middle">
             {/* <IoPlayCircleOutline className=' text-6xl font-extralight'/> */}
-            <a href=""><IoPlayCircleOutline className=' text-6xl font-extralight'/></a>
+            <a href=""><IoPlayCircleOutline className=' text-6xl font-extralight hover:text-[#e13100]'/></a>
+            <Link to={`/detail/${movie.id}`}>
+              <button className='bg-gray-500 px-4 py-2'>Detail</button>
+            </Link>
             {/* <YouTube videoId={videos[0]?.key} className=' text-6xl font-extralight'/> */}
             
 
@@ -56,13 +61,13 @@ console.log(videos);
              
               <p className=' text-lg font-bold break-words mt-4'>{movie.original_title.substring(0,25)}</p>
               <div className="flex justify-between items-center">
-              <div className=" flex flex-col justify-start items-center mt-2">
-              <p className=' text-sm text-[hsla(0,0%,100%,.75)]'>Release Date</p>
-              <p className=' text-sm text-[hsla(0,0%,100%,.75)]'>{movie.release_date}</p>
+              <div className=" flex flex-col justify-start items-center gap-1">
+              <p className=' text-xs text-[hsla(0,0%,100%,.75)]'>Release Date</p>
+              <p className=' text-xs text-[hsla(0,0%,100%,.75)]'>{movie.release_date}</p>
               </div>
-              <div className="flex flex-row-reverse gap-2 my-4">
+              <div className="flex flex-row-reverse gap-3 my-4">
              <i><FaStar className=' text-xl text-[#f5c518]'/></i>
-             <p>{Number((movie.vote_average).toFixed(2))}</p>
+             <p className='text-[hsla(0,0%,100%,.75)]'>{Number((movie.vote_average).toFixed(1))}</p>
              </div>
               </div>
               

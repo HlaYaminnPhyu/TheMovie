@@ -28,10 +28,10 @@ const MovieRow = ({ title, items }) => {
 	<div className="movieRow">
 	<h2>{title}</h2>
 	<div className="movieRow--left" onClick={handleLeftArrow}>
-	<FaAngleLeft style={{fontSize: 50}} />
+	<FaAngleLeft style={{fontSize: 50}} className=' hover:text-[#e13100]' />
 	</div>
 	<div className="movieRow--right">
-	<FaAngleRight style={{fontSize: 50}} onClick={handleRightArrow}/>
+	<FaAngleRight style={{fontSize: 50}} className=' hover:text-[#e13100]' onClick={handleRightArrow}/>
 	</div>
 	<div className="movieRow--listarea">
 		<div className="movieRow--list" style={{

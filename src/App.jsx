@@ -17,6 +17,8 @@ import Card from "./components/Card";
 import axios from "axios";
 import Header from "./components/Header";
 import MovieRow from "./components/MovieRow";
+import { Route, Routes } from "react-router-dom";
+import Detail from "./components/Detail";
 
 // [#344c36] [#faad1b] #dbd2c1 #f6f1e3 #040707 #f1603c #fdae16 #f6efe1  #fdae16 #000000  [#e13100]
 // https://preview.themeforest.net/item/unded-creative-agency-and-portfolio-react-template/full_screen_preview/49841815?_ga=2.126775822.2070452220.1706285728
@@ -72,7 +74,7 @@ const getVideos=async()=>{
   useEffect(() => {
     const loadAll = async () => {
       let list = await api.getHomeList();
-      console.log(list);
+      // console.log(list);
       setMovieList(list);
 
       let originals = list.filter((i) => i.slug === "originals");
@@ -86,7 +88,7 @@ const getVideos=async()=>{
 
       setFeaturedData(chosenInfo);
 
-      console.log(chosenInfo);
+      // console.log(chosenInfo);
     };
 
     loadAll();
@@ -108,31 +110,13 @@ const getVideos=async()=>{
 
   return (
     <MantineProvider>
+      
       <div className=" min-h-full text-white">
-        <div className=""></div>
-        {/* <nav className=" w-full flex justify-between items-center font-bold bg-transparent">
-      
-      <div className=" flex items-center gap-10">
-      
-      <span className="logos">
-          <img src={movie} className=" w-24 h-16" alt="" />
-      </span>
-     
-      </div>
-        
-      <div className="">
-        <ul className=" flex gap-6">
-          <li className=" text-lg">
-          <a href="">Movies
-          </a>
-          </li>
-          
-        </ul>
-      </div>
-     
-    
- 
-  </nav> */}
+      <Routes>
+        {/* <Route path="/" element={<Filter/>}/> */}
+        <Route path="/detail/:id" element={<Detail/>}/>
+      </Routes>
+       
 
         <Carousel originals={featuredData}/>
        
