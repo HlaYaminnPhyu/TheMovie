@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 
 import Path from "./routes/Path";
-import movie from './img/1.png'
 
 import { MantineProvider } from "@mantine/core";
 import "@mantine/core/styles.css";
@@ -19,7 +18,7 @@ import axios from "axios";
 import Header from "./components/Header";
 import MovieRow from "./components/MovieRow";
 
-// [#344c36] [#faad1b] #dbd2c1 #f6f1e3 #040707 #f1603c #fdae16 #f6efe1  #fdae16 #000000
+// [#344c36] [#faad1b] #dbd2c1 #f6f1e3 #040707 #f1603c #fdae16 #f6efe1  #fdae16 #000000  [#e13100]
 // https://preview.themeforest.net/item/unded-creative-agency-and-portfolio-react-template/full_screen_preview/49841815?_ga=2.126775822.2070452220.1706285728
 
 // https://api.themoviedb.org/3/discover/tv?api_key=9e42c112beec9727fcc0524687a55da2
@@ -110,8 +109,8 @@ const getVideos=async()=>{
   return (
     <MantineProvider>
       <div className=" min-h-full text-white">
-        
-        <nav className=" w-full px-1 py-2 lg:p-4 lg:pt-5 flex justify-between items-center font-bold sticky bg-transparent z-20">
+        <div className=""></div>
+        {/* <nav className=" w-full flex justify-between items-center font-bold bg-transparent">
       
       <div className=" flex items-center gap-10">
       
@@ -133,27 +132,15 @@ const getVideos=async()=>{
      
     
  
-  </nav>
-        
-      
-
+  </nav> */}
 
         <Carousel originals={featuredData}/>
        
         <div className='page'>
-      {/* <Header black={blackHeader} /> */}
+      <Header black={blackHeader} />
       {/* {featuredData &&
         <FeaturedMovie item={featuredData} />} */}
-      {/* <section className='lists'>
-        {movieList.map((item, key) => (<MovieRow key={key} title={item.title} items={item.items} />))}
-      </section> */}
-
-
-      {/* {movieList.length <= 0 &&
-        <div className='loading'>
-          <img src='https://media.filmelier.com/noticias/br/2020/03/Netflix_LoadTime.gif' alt='Carregando' size={13}></img>
-        </div>
-      } */}
+      
     </div>
 
     <div className="">
@@ -168,9 +155,10 @@ const getVideos=async()=>{
           <MdMovieFilter className="text-4xl" />
         </a>
       </span>
-      <div className="">
+      <Filter popular={movieData} filtered={filtered} activeGenre={activeGenre} setActiveGenre={setActiveGenre} setFiltered={setFiltered}/>
+      {/* <div className="">
         <ul className=" flex gap-6">
-          <li className=" text-lg">
+          <li className=" text-lg text-[#e13100]">
           <a href="">Movies
           </a>
           </li>
@@ -184,7 +172,7 @@ const getVideos=async()=>{
             <a href="">Recruitment</a>
           </li>
         </ul>
-      </div>
+      </div> */}
       </div>
         
         <div className=" flex items-center gap-2 border-b-2 rounded px-3 py-2">
@@ -196,7 +184,7 @@ const getVideos=async()=>{
     
  
   </nav>
-        <Filter popular={movieData} filtered={filtered} activeGenre={activeGenre} setActiveGenre={setActiveGenre} setFiltered={setFiltered}/>
+        {/* <Filter popular={movieData} filtered={filtered} activeGenre={activeGenre} setActiveGenre={setActiveGenre} setFiltered={setFiltered}/> */}
     </div>
 	<div className=' flex flex-wrap justify-center items-center gap-3 min-h-screen'>
 		{filtered?.map(movie=>{
@@ -209,6 +197,17 @@ const getVideos=async()=>{
 			})}
 		
 	</div>
+  <hr  className=" text-white w-full my-20"/>
+  <section className='lists'>
+        {movieList.map((item, key) => (<MovieRow key={key} title={item.title} items={item.items} />))}
+      </section>
+
+
+      {movieList.length <= 0 &&
+        <div className='loading'>
+          <img src='https://media.filmelier.com/noticias/br/2020/03/Netflix_LoadTime.gif' alt='Carregando' size={13}></img>
+        </div>
+      }
       </div>
     </MantineProvider>
   );

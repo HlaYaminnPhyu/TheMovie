@@ -12,10 +12,10 @@ const Filter = ({popular, setActiveGenre, filtered, activeGenre, setFiltered}) =
 	},[activeGenre]);
 	
   return (
-	<div className=' my-5 ml-20 flex gap-3'>
-		<button onClick={()=>setActiveGenre(0)} className=' bg-[#f1603c] text-white rounded px-6 py-1'>All</button>
-		<button onClick={()=>setActiveGenre(28)} className=' bg-[#f1603c] text-white rounded px-6 py-1'>Actions</button>
-		<button onClick={()=>setActiveGenre(80)} className=' bg-[#f1603c] text-white rounded px-6 py-1'>Comedy</button>
+	<div className=' flex gap-10'>
+		<button onClick={()=>setActiveGenre(0)} className=' text-lg text-white hover:text-[#e13100] '>All</button>
+		<button onClick={()=>setActiveGenre(28)} className=' text-lg text-white hover:text-[#e13100]'>Actions</button>
+		<button onClick={()=>setActiveGenre(80)} className=' text-lg text-white hover:text-[#e13100]'>Comedy</button>
 
 	</div>
   )

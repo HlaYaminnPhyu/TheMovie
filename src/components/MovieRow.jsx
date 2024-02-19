@@ -14,8 +14,8 @@ const MovieRow = ({ title, items }) => {
     }
     const handleRightArrow = () => {
         let x = scrollX - Math.round(window.innerWidth / 2);
-        // let listW = items.results.length * 150;
-        let listW = items.results.length * 200;
+        let listW = items.results.length * 150;
+        // let listW = items.results.length * 200;
 
         if ((window.innerWidth - listW) > x) {
             // x = (window.innerWidth - listW) - 60;
@@ -36,8 +36,8 @@ const MovieRow = ({ title, items }) => {
 	<div className="movieRow--listarea">
 		<div className="movieRow--list" style={{
 			marginLeft: scrollX,
-			// width: items.results.length * 150
-			width: items.results.length * 300
+			width: items.results.length * 150
+			// width: items.results.length * 300
 
 			}}>
 			{items.results.length > 0 && items.results.map((item, key) => (
@@ -46,7 +46,7 @@ const MovieRow = ({ title, items }) => {
 				<img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} alt={item.original_title} />
 				<div className="mid">
           
-		  <a href=""><IoPlayCircleOutline className=' text-6xl font-extralight'/></a>
+		  {/* <a href=""><IoPlayCircleOutline className=' text-6xl font-extralight'/></a> */}
 </div>
 			</div>
 			))}

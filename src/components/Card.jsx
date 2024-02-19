@@ -61,7 +61,7 @@ console.log(videos);
               <p className=' text-sm text-[hsla(0,0%,100%,.75)]'>{movie.release_date}</p>
               </div>
               <div className="flex flex-row-reverse gap-2 my-4">
-             <i><FaStar className=' text-xl text-yellow-500'/></i>
+             <i><FaStar className=' text-xl text-[#f5c518]'/></i>
              <p>{Number((movie.vote_average).toFixed(2))}</p>
              </div>
               </div>
