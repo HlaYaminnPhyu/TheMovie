@@ -3,6 +3,7 @@ import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import { IoPlayCircleOutline } from 'react-icons/io5';
 
 const MovieRow = ({ title, items }) => {
+	
 	const [scrollX, setScrollX] = useState(0);
 
     const handleLeftArrow = () => {

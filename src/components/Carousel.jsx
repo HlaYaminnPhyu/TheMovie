@@ -10,11 +10,11 @@ import { FaPlay, FaPlus } from 'react-icons/fa'
 const Carousel = ({originals}) => {
 
 
-  let firstDate = new Date(originals?.first_air_date);
   let genres = [];
   for(let i in originals?.genres) {
       genres.push( originals?.genres[i].name );
   }
+  
   return (
 	<div className=''>
 
@@ -31,7 +31,7 @@ const Carousel = ({originals}) => {
                     </div>
                     <div className="featured--info">
                         <div className="featured--points">{originals?.vote_average} points</div>
-                        {/* <div className="featured--year">{originals?.getFullYear()}</div> */}
+                        <div className="featured--year">{originals?.first_air_date}</div>
                         <div className="featured--seasons">{originals?.number_of_seasons} season{originals?.number_of_seasons !== 1 ? 's' : ''}</div>
                     </div>
                     <div className="featured--description">{originals?.overview}</div>

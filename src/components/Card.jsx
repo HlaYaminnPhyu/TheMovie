@@ -43,16 +43,19 @@ const Card = ({movie,videos}) => {
             <div className="middle">
             {/* <IoPlayCircleOutline className=' text-6xl font-extralight'/> */}
             <a href=""><IoPlayCircleOutline className=' text-6xl font-extralight hover:text-[#e13100]'/></a>
-            <Link to={`/detail/${movie.id}`}>
-              <button className='bg-gray-500 px-4 py-2'>Detail</button>
-            </Link>
-            {/* <YouTube videoId={videos[0]?.key} className=' text-6xl font-extralight'/> */}
             
+            {/* <YouTube videoId={videos[0]?.key} className=' text-6xl font-extralight'/> */}
+            {/* <div className="">
+              <button className=' backdrop-brightness-50 bg-white/30'>Detail</button>
+            </div> */}
 
   </div>
-  <div className=" b absolute">
-              <button className=' w-full py-2 px-10 bg-slate-500 text-black'>Detail</button>
-            </div>
+  <div className="b">
+  <Link to={`/detail/${movie.id}`}>
+              <button className=' w-full py-2 px-5 backdrop-blur-sm bg-white/20 '>Detail</button>
+            </Link>
+  </div>
+ 
               </div>
             
             </div>

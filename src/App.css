@@ -3,6 +3,10 @@ body{
 	font-family: 'Lato', sans-serif;
 	background-color: #000;
 }
+
+.hero-overlay{
+  background-color: rgba(0, 0, 0, 0.6);
+}
 .card {
 	/* background-color: theme('colors.white');
 	border-radius: theme('borderRadius.sm'); */
@@ -30,7 +34,7 @@ body{
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -100%);
 	-ms-transform: translate(-50%, -50%);
 	text-align: center;
   }
@@ -42,13 +46,10 @@ body{
 	opacity: 1;
   }
   .b{
-	transition: .5s ease;
-	opacity: 0;
-	transform: translate(50%, -100%);
-	-ms-transform: translate(-50%, 50%); 
-	text-align: center;
-	filter: blur(5px);
-  -webkit-filter: blur(5px);
+    transition: .5s ease;
+opacity: 0;
+transform: translate(0%, -60%);
+	-ms-transform: translate(-50%, -50%);
  
   }
   .card:hover .b{
@@ -60,12 +61,7 @@ body{
 .card:hover img{
 		transform: scale(1.1);
 }
-.text {
-	background-color: #04AA6D;
-	color: white;
-	font-size: 16px;
-	padding: 16px 32px;
-  }
+
 
   .movieRow {
     margin-bottom: 30px;

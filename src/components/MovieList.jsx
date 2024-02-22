@@ -1,39 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react'
+import MovieRow from './MovieRow';
+import api from '../api';
+import { MdMovieFilter } from 'react-icons/md';
+import Filter from './Filter';
+import { FaSearch } from 'react-icons/fa';
+import Carousel from './Carousel';
+import { Route, Routes } from 'react-router-dom';
+import Header from './Header';
+import axios from 'axios';
+import { MantineProvider } from '@mantine/core';
+import Card from './Card';
 
-import Navbar from "./components/Navbar";
+const MovieList = () => {
 
-import Path from "./routes/Path";
 
-import { MantineProvider } from "@mantine/core";
-import "@mantine/core/styles.css";
-// import Movies from "./pages/Movies";
-import api from "./api";
-import Carousel from "./components/Carousel";
-import "./App.css"
-import { FaSearch } from "react-icons/fa";
-import { MdMovieFilter } from "react-icons/md";
-import Filter from "./components/Filter";
-import Card from "./components/Card";
-import axios from "axios";
-import Header from "./components/Header";
-import MovieRow from "./components/MovieRow";
-import { Route, Routes } from "react-router-dom";
-import Detail from "./components/Detail";
-import MovieList from "./components/MovieList";
-
-// [#344c36] [#faad1b] #dbd2c1 #f6f1e3 #040707 #f1603c #fdae16 #f6efe1  #fdae16 #000000  [#e13100]
-// https://preview.themeforest.net/item/unded-creative-agency-and-portfolio-react-template/full_screen_preview/49841815?_ga=2.126775822.2070452220.1706285728
-
-// https://api.themoviedb.org/3/discover/tv?api_key=9e42c112beec9727fcc0524687a55da2
-// https://api.themoviedb.org/3/movie/changes?api_key=9e42c112beec9727fcc0524687a55da2
-// https://api.themoviedb.org/3/movie/43901?api_key=9e42c112beec9727fcc0524687a55da2
-// https://api.themoviedb.org/3/movie/10751/videos?api_key=9e42c112beec9727fcc0524687a55da2
-// https://api.themoviedb.org/3/movie/10751/similar?api_key=9e42c112beec9727fcc0524687a55da2
-// https://api.themoviedb.org/3/person/popular?api_key=9e42c112beec9727fcc0524687a55da2
-
-const App = () => {
-
-  const [movieData,setMovieData]=useState([]);
+	const [movieData,setMovieData]=useState([]);
 	const [filtered,setFiltered]=useState([]);
 	const [activeGenre,setActiveGenre]=useState(0);
 	const [inputValue,setInputValue]=useState('');
@@ -115,15 +96,15 @@ const getVideos=async()=>{
       <div className=" min-h-full text-white">
       <Header black={blackHeader} />
       <Routes>
-        <Route path="/" element={<MovieList/>}/>
-        <Route path="/detail/:id" element={<Detail/>}/>
+        {/* <Route path="/" element={<Filter/>}/> */}
+        {/* <Route path="/detail/:id" element={<Detail/>}/> */}
         {/* <Route path="/carousel" element={<Carousel originals={featuredData}/>}/> */}
         {/* <Route path="/movieList" element={<MovieList/>}/> */}
 
       </Routes>
        
 
-        {/* <Carousel originals={featuredData}/> */}
+        <Carousel originals={featuredData}/>
        
       
       {/* {featuredData &&
@@ -131,7 +112,7 @@ const getVideos=async()=>{
       
 
 
-    {/* <div className=" mt-20">
+    <div className=" mt-20">
     <nav className=" w-full px-1 py-2 lg:p-4 lg:pt-5 flex justify-between items-center font-bold sticky bg-transparent z-20">
       
       <div className=" flex items-center gap-10">
@@ -165,9 +146,9 @@ const getVideos=async()=>{
 				)
 			})}
 		
-	</div> */}
-  {/* <hr  className=" text-white w-full my-20"/> */}
-  {/* <section className='lists'>
+	</div>
+  <hr  className=" text-white w-full my-20"/>
+  <section className='lists'>
         {movieList.map((item, key) => (<MovieRow key={key} title={item.title} items={item.items} />))}
       </section>
 
@@ -176,10 +157,10 @@ const getVideos=async()=>{
         <div className='loading'>
           <img src='https://media.filmelier.com/noticias/br/2020/03/Netflix_LoadTime.gif' alt='Carregando' size={13}></img>
         </div>
-      } */}
+      }
       </div>
     </MantineProvider>
   );
-};
+}
 
-export default App;
+export default MovieList
