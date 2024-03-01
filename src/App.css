@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 body{
-	font-family: 'Lato', sans-serif;
+  font-family: "Open Sans", sans-serif;
 	background-color: #000;
 }
 
 .hero-overlay{
-  background-color: rgba(0, 0, 0, 0.6);
+  /* background-color: rgba(0, 0, 0, 0.6); */
+  background-color: rgba(0, 0, 0, 0.75);
+
 }
 .card {
-	/* background-color: theme('colors.white');
-	border-radius: theme('borderRadius.sm'); */
-	/* padding: theme('spacing.4'); */
-	/* box-shadow: theme('boxShadow.lg'); */
+
   }
   .image {
 	opacity: 1;
@@ -24,7 +24,6 @@ body{
   }
   .card .image{
 	transition: all .3s;
-	/* transition-timing-function: ease-in-out; */
 	transition-timing-function: ease;
 
   }
@@ -103,7 +102,7 @@ transform: translate(0%, -60%);
     position: absolute;
     width: 40px;
     height: 225px;
-    /* height: 375px; */
+
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 99;
     display: flex;

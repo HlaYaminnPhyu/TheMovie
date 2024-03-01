@@ -12,13 +12,28 @@ export default {
     getHomeList: async () => {
         return [
             {
+                slug: 'top_rated',
+                title: 'Top Rated',
+                desc: 'Top rated movies on IMDb this week',
+                items: await basicFetch(`/movie/top_rated?language=en-US&page=1&api_key=${API_KEY}`)
+            },
+            {
+                slug: 'now_playing',
+                title: 'Now Playing',
+                desc: ` This week's top TV and movies`,
+                items: await basicFetch(`/movie/now_playing?language=en-US&page=1&api_key=${API_KEY}`)
+            },
+          
+            {
                 slug: 'originals',
                 title: 'Original Netflix',
+                desc: ' TV shows and movies just for you',
                 items: await basicFetch(`/discover/tv?with_networks=213&language=en-US&api_key=${API_KEY}`)
             },
             {
                 slug: 'sci-fi',
                 title: 'Sci Fi',
+                desc: ' ',
                 items: await basicFetch(`/discover/movie?with_genres=878&language=en-US&api_key=${API_KEY}`)
             },
             {
@@ -53,6 +68,7 @@ export default {
             },
         ];
     },
+  
     getMovieInfo: async (movieId, type) => {
         let info = {};
         if (movieId) {

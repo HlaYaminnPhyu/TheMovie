@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import MovieRow from './MovieRow';
 import api from '../api';
-import { MdMovieFilter } from 'react-icons/md';
 import Filter from './Filter';
 import { FaSearch } from 'react-icons/fa';
-import Carousel from './Carousel';
-import { Route, Routes } from 'react-router-dom';
-import Header from './Header';
+import Hero from './Hero';
 import axios from 'axios';
 import { MantineProvider } from '@mantine/core';
 import Card from './Card';
@@ -24,7 +21,6 @@ const MovieList = () => {
     getVideos();
 	},[inputValue]);
 	const shown=inputValue?'search':'discover';
-	// let Api=`https://api.themoviedb.org/3/discover/movie`;
 	let Api=`https://api.themoviedb.org/3/${shown}/movie`;
 
 	const Movie=async()=>{
@@ -52,11 +48,13 @@ const getVideos=async()=>{
 
   const [movieList, setMovieList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
-  const [blackHeader, setBlackHeader] = useState(false);
+
   useEffect(() => {
     const loadAll = async () => {
       let list = await api.getHomeList();
-      console.log(list);
+    
+    
+      
       setMovieList(list);
 
       let originals = list.filter((i) => i.slug === "originals");
@@ -76,59 +74,25 @@ const getVideos=async()=>{
     loadAll();
   }, []);
 
-  useEffect(() => {
-    const scrollListener = () => {
-      if (window.scrollY > 10) {
-        setBlackHeader(true);
-      } else {
-        setBlackHeader(false);
-      }
-    }
-    window.addEventListener('scroll', scrollListener);
-    return () => {
-      window.removeEventListener('scroll', scrollListener);
-    }
-  }, []);
+
 
   return (
     <MantineProvider>
       
       <div className=" min-h-full text-white">
-      <Header black={blackHeader} />
-      <Routes>
-        {/* <Route path="/" element={<Filter/>}/> */}
-        {/* <Route path="/detail/:id" element={<Detail/>}/> */}
-        {/* <Route path="/carousel" element={<Carousel originals={featuredData}/>}/> */}
-        {/* <Route path="/movieList" element={<MovieList/>}/> */}
 
-      </Routes>
-       
-
-        <Carousel originals={featuredData}/>
-       
+        <Hero originals={featuredData}/>
+    <div className=" -mt-10 lg:-mt-8">
+    <nav className=" w-full py-2 p-4 lg:pt-5 flex flex-col md:flex-row lg:flex-row justify-start md:justify-between lg:justify-between items-center font-bold sticky bg-transparent z-20">
       
-      {/* {featuredData &&
-        <FeaturedMovie item={featuredData} />} */}
+      <div className=" flex items-center">
       
-
-
-    <div className=" mt-20">
-    <nav className=" w-full px-1 py-2 lg:p-4 lg:pt-5 flex justify-between items-center font-bold sticky bg-transparent z-20">
-      
-      <div className=" flex items-center gap-10">
-      
-      <span className="logos">
-        <a
-          href=""
-        >
-          <MdMovieFilter className="text-4xl" />
-        </a>
-      </span>
+     
       <Filter popular={movieData} filtered={filtered} activeGenre={activeGenre} setActiveGenre={setActiveGenre} setFiltered={setFiltered}/>
       
       </div>
         
-        <div className=" flex items-center gap-2 border-b-2 rounded px-3 py-2">
+        <div className=" my-4 md:mt-0 lg:mt-0 flex items-center gap-2 border-b-2 rounded px-3 py-2">
           <FaSearch className=" text-white"/>
          <input value={inputValue} onChange={(e)=>setInputValue(e.target.value)} className=" outline-none text-white bg-transparent" type="text" placeholder="Search..."/>
           
@@ -149,7 +113,7 @@ const getVideos=async()=>{
 	</div>
   <hr  className=" text-white w-full my-20"/>
   <section className='lists'>
-        {movieList.map((item, key) => (<MovieRow key={key} title={item.title} items={item.items} />))}
+        {movieList.map((item, key) => (<MovieRow key={key} title={item.title} desc={item.desc} items={item.items} />))}
       </section>
 
 

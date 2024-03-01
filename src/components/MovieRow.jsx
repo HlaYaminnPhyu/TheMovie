@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import { IoPlayCircleOutline } from 'react-icons/io5';
 
-const MovieRow = ({ title, items }) => {
+const MovieRow = ({ title, items ,desc }) => {
 	
 	const [scrollX, setScrollX] = useState(0);
 
@@ -27,7 +27,14 @@ const MovieRow = ({ title, items }) => {
     }
   return (
 	<div className="movieRow">
-	<h2>{title}</h2>
+		<div className=" ml-5">
+		<div className=" flex justify-start items-center gap-3">
+		<div className=" w-1 h-8 bg-[#e13100]"></div>
+	<h3 className=' text-xl font-bold'>{title}</h3>
+		</div>
+		<h3 className=' text-base my-2 font-semibold text-[hsla(0,0%,100%,.7)]'>{desc}</h3>
+		</div>
+		
 	<div className="movieRow--left" onClick={handleLeftArrow}>
 	<FaAngleLeft style={{fontSize: 50}} className=' hover:text-[#e13100]' />
 	</div>

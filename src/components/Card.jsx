@@ -1,22 +1,9 @@
 import React from 'react'
 import { FaStar } from "react-icons/fa";
-import NoImg from "../img/download.jpg"
+import NoImg from "../img/20.jpg"
 import {IoPlayCircleOutline} from "react-icons/io5"
-import YouTube from 'react-youtube';
 import { Link } from 'react-router-dom';
-/* #110e1b */
-/* #7c162e */
-/* #5c162e */
-/* #3c162f */
-/* #191528 */
 
-
-// #bc6c25
-// #dda15e
-// #fefae0
-// #283618
-// #606c38
-// #
 
 const Card = ({movie,videos}) => {
   
@@ -41,18 +28,14 @@ const Card = ({movie,videos}) => {
               <div className=" relative">
               <img className=' image object-fill w-full h-[350px]' src={`${movie.poster_path? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`: NoImg} `} alt="" />
             <div className="middle">
-            {/* <IoPlayCircleOutline className=' text-6xl font-extralight'/> */}
-            <a href=""><IoPlayCircleOutline className=' text-6xl font-extralight hover:text-[#e13100]'/></a>
-            
-            {/* <YouTube videoId={videos[0]?.key} className=' text-6xl font-extralight'/> */}
-            {/* <div className="">
-              <button className=' backdrop-brightness-50 bg-white/30'>Detail</button>
-            </div> */}
+            <a href={`/detail/${movie.id}`}><IoPlayCircleOutline className=' text-6xl font-extralight hover:text-[#e13100]'/></a>
+           
 
   </div>
   <div className="b">
   <Link to={`/detail/${movie.id}`}>
               <button className=' w-full py-2 px-5 backdrop-blur-sm bg-white/20 '>Detail</button>
+
             </Link>
   </div>
  
@@ -62,7 +45,7 @@ const Card = ({movie,videos}) => {
             
              <div className="">
              
-              <p className=' text-lg font-bold break-words mt-4'>{movie.original_title.substring(0,25)}</p>
+              <p className=' text-lg font-bold break-words'>{movie.original_title.substring(0,20)}</p>
               <div className="flex justify-between items-center">
               <div className=" flex flex-col justify-start items-center gap-1">
               <p className=' text-xs text-[hsla(0,0%,100%,.75)]'>Release Date</p>

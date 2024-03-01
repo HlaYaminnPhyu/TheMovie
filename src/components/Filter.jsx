@@ -12,13 +12,15 @@ const Filter = ({popular, setActiveGenre, filtered, activeGenre, setFiltered}) =
 	},[activeGenre]);
 	
   return (
-	<div className=' flex gap-10'>
+	<div className=' flex gap-10 md:gap-8 lg:gap-10'>
 
 
 		
-		<button onClick={()=>setActiveGenre(0)} className=' text-lg text-white hover:text-[#e13100] '>All</button>
-		<button onClick={()=>setActiveGenre(28)} className=' text-lg text-white hover:text-[#e13100]'>Actions</button>
-		<button onClick={()=>setActiveGenre(80)} className=' text-lg text-white hover:text-[#e13100]'>Comedy</button>
+		<button onClick={()=>setActiveGenre(0)} className=' text-sm md:text-base lg:text-base text-white hover:text-[#e13100] '>All</button>
+		<button onClick={()=>setActiveGenre(28)} className=' text-sm md:text-base lg:text-base text-white hover:text-[#e13100]'>Actions</button>
+		<button onClick={()=>setActiveGenre(16)} className=' text-sm md:text-base lg:text-base text-white hover:text-[#e13100]'>Animation</button>
+		<button onClick={()=>setActiveGenre(53)} className=' text-sm md:text-base lg:text-base text-white hover:text-[#e13100]'>Thriller</button>
+
 
 	</div>
   )
