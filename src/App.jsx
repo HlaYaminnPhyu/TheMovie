@@ -4,7 +4,7 @@ import "@mantine/core/styles.css";
 import api from "./api";
 import "./App.css";
 import Header from "./components/Header";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Detail from "./components/Detail";
 import MovieList from "./components/MovieList";
 import Footer from "./components/Footer";
@@ -52,6 +52,7 @@ const App = () => {
           <Route path="/" element={<MovieList />} />
           <Route path="/detail/:id" element={<Detail />} />
           <Route path="/watch/:id" element={<Watch />} />
+          <Route path="*" element={<Navigate replace to="/" />} />
         </Routes>
         <Footer />
       </div>

@@ -28,7 +28,10 @@ const Card = ({movie,videos}) => {
               <div className=" relative">
               <img className=' image object-fill w-full h-[350px]' src={`${movie.poster_path? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`: NoImg} `} alt="" />
             <div className="middle">
-            <a href={`/detail/${movie.id}`}><IoPlayCircleOutline className=' text-6xl font-extralight hover:text-[#e13100]'/></a>
+            <Link to={`/detail/${movie.id}`}>
+            <IoPlayCircleOutline className=' text-6xl font-extralight hover:text-[#e13100]'/>
+
+            </Link>
            
 
   </div>
