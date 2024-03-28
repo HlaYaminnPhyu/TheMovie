@@ -37,7 +37,7 @@ const Card = ({movie,videos}) => {
   </div>
   <div className="b">
   <Link to={`/detail/${movie.id}`}>
-              <button className=' w-full py-2 px-5 backdrop-blur-sm bg-white/20 '>Detail</button>
+              <button className=' w-full py-2 px-5 backdrop-blur-sm bg-white/20'>Detail</button>
 
             </Link>
   </div>

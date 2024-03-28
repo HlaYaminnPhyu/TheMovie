@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaHome, FaImdb, FaStar } from "react-icons/fa";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import YouTube from "react-youtube";
 
 const Detail = () => {
@@ -88,10 +88,10 @@ const Detail = () => {
                         <p className="text-[hsla(0,0%,100%,.75)] text-sm font-semibold">
                           Go To Home Page
                         </p>
-                        <a href={deMovie?.homepage}>
+                        <Link to={deMovie?.homepage}>
                           {" "}
                           <FaHome className=" text-xl text-[#e13100] " />
-                        </a>
+                        </Link>
                       </div>
                       <div className=" flex gap-3 items-center">
                         <i>
